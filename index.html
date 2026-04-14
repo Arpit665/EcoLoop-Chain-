@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoLoop-Chain | Full Nexus</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+<body>
+
+<div class="app-container">
+    <header>
+        <h2>♻️ EcoLoop-Chain</h2>
+        <p class="subtitle">Industrial Matchmaking Nexus - Team Kira's Logic</p>
+    </header>
+
+    <nav class="tabs">
+        <button class="tab-btn active" onclick="switchTab('scanner', this)">🤖 AI Scanner</button>
+        <button class="tab-btn" onclick="switchTab('marketplace', this)">🏪 Live Marketplace</button>
+        <button class="tab-btn" onclick="switchTab('bounties', this)">🎯 Bounty Board</button>
+    </nav>
+
+    <section id="scanner" class="tab-content active-tab">
+        <div class="video-box" id="camera-feed">
+            <img id="uploaded-image" class="hidden" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px;" />
+        </div>
+        
+        <div class="action-row">
+            <button id="scanBtn" class="action-btn">Capture & Analyze</button>
+            <label for="file-upload" class="upload-btn">📂 Upload</label>
+            <input type="file" id="file-upload" accept="image/*" class="hidden">
+        </div>
+
+        <div id="certificateUI" class="certificate hidden">
+            <div class="cert-header">
+                <h3>Digital Certificate</h3>
+                <span id="out-grade" class="tag"></span>
+            </div>
+            <p class="data-row"><strong>Detected Object:</strong> <span id="out-macro" class="highlight-white"></span></p>
+            <p class="data-row"><strong>Recoverable Outputs:</strong> <span id="out-micro" class="highlight-green"></span></p>
+            <p class="data-row"><strong>Reusability:</strong> <span id="out-reusability" class="highlight-white"></span></p>
+            
+            <div class="match-box">
+                <p class="match-title">⚡ Auto-Match Found</p>
+                <p id="out-buyer" class="match-buyer"></p>
+            </div>
+            
+            <div class="qr-box">
+                <canvas id="qr-canvas"></canvas>
+                <p class="qr-text">Scan to Verify Chain of Custody</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="marketplace" class="tab-content">
+        <h3 class="section-title">Verified Industrial Waste Listings</h3>
+        <div class="grid-container">
+            <div class="market-card">
+                <span class="tag grade-a">Grade A</span>
+                <h4>Degraded Motherboards</h4>
+                <p class="data-row"><strong>Yield:</strong> Silicon, Silver</p>
+                <p class="data-row"><strong>Qty:</strong> 500 kg</p>
+                <button class="buy-btn">Purchase Batch</button>
+            </div>
+            <div class="market-card">
+                <span class="tag grade-b">Grade B</span>
+                <h4>Nylon Textile Scraps</h4>
+                <p class="data-row"><strong>Yield:</strong> Synthetic Polyamide</p>
+                <p class="data-row"><strong>Qty:</strong> 1.2 Tons</p>
+                <button class="buy-btn">Purchase Batch</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="bounties" class="tab-content">
+        <h3 class="section-title">Industry B Demand Bounties</h3>
+        <div class="bounty-list">
+            <div class="bounty-row">
+                <div class="bounty-info">
+                    <h4>Solar Panel Manufacturers</h4>
+                    <p>Seeking: <strong>Grade A Silicon</strong></p>
+                </div>
+               
+                <div class="bounty-action">
+                    <span class="bounty-price">+20% Premium</span>
+                    <button class="supply-btn">Fulfill Bounty</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
