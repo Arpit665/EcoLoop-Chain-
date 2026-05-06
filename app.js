@@ -1,6 +1,4 @@
-// ==========================================
-// 0. TAB NAVIGATION LOGIC
-// ==========================================
+
 function switchTab(tabId, clickedBtn) {
     const contents = document.querySelectorAll('.tab-content');
     contents.forEach(content => content.classList.remove('active-tab'));
@@ -10,9 +8,6 @@ function switchTab(tabId, clickedBtn) {
     clickedBtn.classList.add('active');
 }
 
-// ==========================================
-// 1. INITIALIZE LIVE WEBCAM & FILE UPLOAD
-// ==========================================
 const videoElement = document.createElement('video');
 videoElement.autoplay = true;
 videoElement.playsInline = true;
@@ -54,24 +49,12 @@ document.getElementById('file-upload').addEventListener('change', function(event
     }
 });
 
-// ==========================================
-// 2. UNIVERSAL WASTE CLASSIFICATION HELPERS
-// ==========================================
 const GRADE_META = {
     "Grade A": { className: "grade-a" },
     "Grade B": { className: "grade-b" },
     "Grade C": { className: "grade-c" }
 };
 
-// ==========================================
-// 3. REAL GEMINI VISION API INTEGRATION
-// ==========================================
-const GEMINI_API_KEYS = [
-    "AIzaSyBTBfW5qK2aN5biJ_qBl69ioO3pCiFnG48",
-    "AIzaSyBLQCCnc7zBdfcXd5wfATRCD8XBTFW5N8A",
-    "AIzaSyD5y7i96mIIq74WGzWZeSrBcVlypqcrXMU",
-    "AIzaSyD-Z1nF0JQPiwiEqpzUZF34xyQ_pKxyzXw"
-];
 const GEMINI_MODELS_TO_TRY = [
     window.GEMINI_MODEL,
     "gemini-2.5-flash-lite",
@@ -326,9 +309,7 @@ async function handleScan() {
     }
 }
 
-// ==========================================
-// 4. UI UPDATE LOGIC
-// ==========================================
+
 function processIndustrialWaste(analysis) {
     const gradeText = analysis.grade || "Grade C";
     const gradeElement = document.getElementById("out-grade");
@@ -359,11 +340,7 @@ function processIndustrialWaste(analysis) {
 
     generateTraceabilityQR(analysis);
     document.getElementById("certificateUI").classList.remove("hidden");
-}
 
-// ==========================================
-// 5. QR CODE GENERATION
-// ==========================================
 function generateTraceabilityQR(analysis) {
     const certificateHash = [
         "ECOLOOP",
