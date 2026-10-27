@@ -68,7 +68,7 @@ function getActiveGeminiApiKeys() {
         : [];
     const runtimeSingle = window.GEMINI_API_KEY ? [window.GEMINI_API_KEY] : [];
 
-    const allKeys = [...runtimeKeys, ...runtimeSingle, ...GEMINI_API_KEYS]
+    const allKeys = [...runtimeKeys, ...runtimeSingle]
         .map(key => String(key || "").trim())
         .filter(key =>
             key &&
@@ -340,6 +340,7 @@ function processIndustrialWaste(analysis) {
 
     generateTraceabilityQR(analysis);
     document.getElementById("certificateUI").classList.remove("hidden");
+}
 
 function generateTraceabilityQR(analysis) {
     const certificateHash = [
